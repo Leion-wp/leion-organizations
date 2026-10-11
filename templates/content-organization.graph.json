@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "id": "content-organization",
+  "name": "Entreprise IA · Création de contenu",
+  "revision": 1,
+  "nodes": [
+    {
+      "id": "editorial",
+      "kind": "pole",
+      "label": "Pôle éditorial",
+      "mission": "Préparer des contenus à examiner.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "general",
+      "kind": "supervisor",
+      "label": "Superviseur éditorial",
+      "mission": "Coordonner recherche, rédaction et revue.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "researcher",
+      "kind": "agent",
+      "label": "Recherche",
+      "mission": "Collecter les éléments et leurs sources.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "writer",
+      "kind": "agent",
+      "label": "Rédaction",
+      "mission": "Produire un brouillon à partir des éléments validés.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "reviewer",
+      "kind": "agent",
+      "label": "Revue",
+      "mission": "Examiner le brouillon et proposer des corrections.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "research",
+      "kind": "task",
+      "label": "Collecter les sources",
+      "mission": "Préparer une note sourcée.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "draft",
+      "kind": "task",
+      "label": "Rédiger un brouillon",
+      "mission": "Produire un contenu pour examen humain.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "review",
+      "kind": "task",
+      "label": "Examiner le contenu",
+      "mission": "Remettre une proposition et un rapport de revue.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "contains-editorial-general",
+      "kind": "contains",
+      "source": "editorial",
+      "target": "general",
+      "label": ""
+    },
+    {
+      "id": "supervises-general-researcher",
+      "kind": "supervises",
+      "source": "general",
+      "target": "researcher",
+      "label": ""
+    },
+    {
+      "id": "supervises-general-writer",
+      "kind": "supervises",
+      "source": "general",
+      "target": "writer",
+      "label": ""
+    },
+    {
+      "id": "supervises-general-reviewer",
+      "kind": "supervises",
+      "source": "general",
+      "target": "reviewer",
+      "label": ""
+    },
+    {
+      "id": "contains-researcher-research",
+      "kind": "contains",
+      "source": "researcher",
+      "target": "research",
+      "label": ""
+    },
+    {
+      "id": "contains-writer-draft",
+      "kind": "contains",
+      "source": "writer",
+      "target": "draft",
+      "label": ""
+    },
+    {
+      "id": "contains-reviewer-review",
+      "kind": "contains",
+      "source": "reviewer",
+      "target": "review",
+      "label": ""
+    },
+    {
+      "id": "flow-research-draft",
+      "kind": "flow",
+      "source": "research",
+      "target": "draft",
+      "label": ""
+    },
+    {
+      "id": "flow-draft-review",
+      "kind": "flow",
+      "source": "draft",
+      "target": "review",
+      "label": ""
+    }
+  ],
+  "scene": {
+    "elements": [],
+    "appState": {},
+    "files": {}
+  }
+}

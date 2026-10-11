@@ -1,0 +1,185 @@
+{
+  "$ref": "#/definitions/LeionGraphV1",
+  "definitions": {
+    "LeionGraphV1": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "revision": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/LeionGraphV1/properties/id"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "pole",
+                  "team",
+                  "supervisor",
+                  "agent",
+                  "task"
+                ]
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "mission": {
+                "type": "string",
+                "maxLength": 4000,
+                "default": ""
+              },
+              "inputs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 1000
+                },
+                "maxItems": 80,
+                "default": []
+              },
+              "outputs": {
+                "$ref": "#/definitions/LeionGraphV1/properties/nodes/items/properties/inputs",
+                "default": []
+              },
+              "capabilities": {
+                "$ref": "#/definitions/LeionGraphV1/properties/nodes/items/properties/inputs",
+                "default": []
+              },
+              "limits": {
+                "type": "object",
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 500
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                },
+                "default": {}
+              },
+              "pipelineRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                },
+                "maxItems": 30,
+                "default": []
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 500
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/LeionGraphV1/properties/id"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "supervises",
+                  "contains",
+                  "flow"
+                ]
+              },
+              "source": {
+                "$ref": "#/definitions/LeionGraphV1/properties/id"
+              },
+              "target": {
+                "$ref": "#/definitions/LeionGraphV1/properties/id"
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 160,
+                "default": ""
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "source",
+              "target"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1500
+        },
+        "scene": {
+          "type": "object",
+          "properties": {
+            "elements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {}
+              },
+              "maxItems": 2500
+            },
+            "appState": {
+              "type": "object",
+              "additionalProperties": {},
+              "default": {}
+            },
+            "files": {
+              "type": "object",
+              "additionalProperties": {},
+              "default": {}
+            }
+          },
+          "required": [
+            "elements"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "name",
+        "revision",
+        "nodes",
+        "edges",
+        "scene"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

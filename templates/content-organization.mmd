@@ -1,0 +1,18 @@
+flowchart TD
+  n0["Pôle éditorial"]
+  n1["Superviseur éditorial"]
+  n2["Recherche"]
+  n3["Rédaction"]
+  n4["Revue"]
+  n5["Collecter les sources"]
+  n6["Rédiger un brouillon"]
+  n7["Examiner le contenu"]
+  n0 -.->|"contains"| n1
+  n1 ==>|"supervises"| n2
+  n1 ==>|"supervises"| n3
+  n1 ==>|"supervises"| n4
+  n2 -.->|"contains"| n5
+  n3 -.->|"contains"| n6
+  n4 -.->|"contains"| n7
+  n5 -->|"flow"| n6
+  n6 -->|"flow"| n7

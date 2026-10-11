@@ -1,0 +1,38 @@
+flowchart TD
+  n0["Superviseur général"]
+  n1["Sécurité"]
+  n2["Superviseur Sécurité"]
+  n3["Développement"]
+  n4["Superviseur Développement"]
+  n5["Business"]
+  n6["Superviseur Business"]
+  n7["Blue Team"]
+  n8["Superviseur Blue Team"]
+  n9["Analyste Blue Team"]
+  n10["Red Team"]
+  n11["Superviseur Red Team"]
+  n12["Analyste Red Team"]
+  n13["Purple Team"]
+  n14["Superviseur Purple Team"]
+  n15["Analyste Purple Team"]
+  n1 -.->|"contains"| n2
+  n0 ==>|"supervises"| n2
+  n3 -.->|"contains"| n4
+  n0 ==>|"supervises"| n4
+  n5 -.->|"contains"| n6
+  n0 ==>|"supervises"| n6
+  n1 -.->|"contains"| n7
+  n7 -.->|"contains"| n8
+  n7 -.->|"contains"| n9
+  n2 ==>|"supervises"| n8
+  n8 ==>|"supervises"| n9
+  n1 -.->|"contains"| n10
+  n10 -.->|"contains"| n11
+  n10 -.->|"contains"| n12
+  n2 ==>|"supervises"| n11
+  n11 ==>|"supervises"| n12
+  n1 -.->|"contains"| n13
+  n13 -.->|"contains"| n14
+  n13 -.->|"contains"| n15
+  n2 ==>|"supervises"| n14
+  n14 ==>|"supervises"| n15

@@ -1,0 +1,4 @@
+.leiok/
+.env
+.env.*
+*.log

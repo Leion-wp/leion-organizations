@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "id": "security-organization",
+  "name": "Organisation · Sécurité, Développement et Business",
+  "revision": 1,
+  "nodes": [
+    {
+      "id": "general",
+      "kind": "supervisor",
+      "label": "Superviseur général",
+      "mission": "Coordonner les pôles et examiner leurs propositions.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "security",
+      "kind": "pole",
+      "label": "Sécurité",
+      "mission": "Organiser le pôle Sécurité.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "security-supervisor",
+      "kind": "supervisor",
+      "label": "Superviseur Sécurité",
+      "mission": "Coordonner les équipes Sécurité.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "development",
+      "kind": "pole",
+      "label": "Développement",
+      "mission": "Organiser le pôle Développement.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "development-supervisor",
+      "kind": "supervisor",
+      "label": "Superviseur Développement",
+      "mission": "Coordonner les équipes Développement.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "business",
+      "kind": "pole",
+      "label": "Business",
+      "mission": "Organiser le pôle Business.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "business-supervisor",
+      "kind": "supervisor",
+      "label": "Superviseur Business",
+      "mission": "Coordonner les équipes Business.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "blue",
+      "kind": "team",
+      "label": "Blue Team",
+      "mission": "Analyser les mesures de défense.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "blue-supervisor",
+      "kind": "supervisor",
+      "label": "Superviseur Blue Team",
+      "mission": "Analyser les mesures de défense.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "blue-analyst",
+      "kind": "agent",
+      "label": "Analyste Blue Team",
+      "mission": "Analyser les mesures de défense.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "red",
+      "kind": "team",
+      "label": "Red Team",
+      "mission": "Examiner les risques et proposer des scénarios de test autorisés.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "red-supervisor",
+      "kind": "supervisor",
+      "label": "Superviseur Red Team",
+      "mission": "Examiner les risques et proposer des scénarios de test autorisés.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "red-analyst",
+      "kind": "agent",
+      "label": "Analyste Red Team",
+      "mission": "Examiner les risques et proposer des scénarios de test autorisés.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "purple",
+      "kind": "team",
+      "label": "Purple Team",
+      "mission": "Consolider les constats Blue et Red et proposer des améliorations.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "purple-supervisor",
+      "kind": "supervisor",
+      "label": "Superviseur Purple Team",
+      "mission": "Consolider les constats Blue et Red et proposer des améliorations.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    },
+    {
+      "id": "purple-analyst",
+      "kind": "agent",
+      "label": "Analyste Purple Team",
+      "mission": "Consolider les constats Blue et Red et proposer des améliorations.",
+      "inputs": [],
+      "outputs": [],
+      "capabilities": [],
+      "limits": {},
+      "pipelineRefs": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "contains-security-security-supervisor",
+      "kind": "contains",
+      "source": "security",
+      "target": "security-supervisor",
+      "label": ""
+    },
+    {
+      "id": "supervises-general-security-supervisor",
+      "kind": "supervises",
+      "source": "general",
+      "target": "security-supervisor",
+      "label": ""
+    },
+    {
+      "id": "contains-development-development-supervisor",
+      "kind": "contains",
+      "source": "development",
+      "target": "development-supervisor",
+      "label": ""
+    },
+    {
+      "id": "supervises-general-development-supervisor",
+      "kind": "supervises",
+      "source": "general",
+      "target": "development-supervisor",
+      "label": ""
+    },
+    {
+      "id": "contains-business-business-supervisor",
+      "kind": "contains",
+      "source": "business",
+      "target": "business-supervisor",
+      "label": ""
+    },
+    {
+      "id": "supervises-general-business-supervisor",
+      "kind": "supervises",
+      "source": "general",
+      "target": "business-supervisor",
+      "label": ""
+    },
+    {
+      "id": "contains-security-blue",
+      "kind": "contains",
+      "source": "security",
+      "target": "blue",
+      "label": ""
+    },
+    {
+      "id": "contains-blue-blue-supervisor",
+      "kind": "contains",
+      "source": "blue",
+      "target": "blue-supervisor",
+      "label": ""
+    },
+    {
+      "id": "contains-blue-blue-analyst",
+      "kind": "contains",
+      "source": "blue",
+      "target": "blue-analyst",
+      "label": ""
+    },
+    {
+      "id": "supervises-security-supervisor-blue-supervisor",
+      "kind": "supervises",
+      "source": "security-supervisor",
+      "target": "blue-supervisor",
+      "label": ""
+    },
+    {
+      "id": "supervises-blue-supervisor-blue-analyst",
+      "kind": "supervises",
+      "source": "blue-supervisor",
+      "target": "blue-analyst",
+      "label": ""
+    },
+    {
+      "id": "contains-security-red",
+      "kind": "contains",
+      "source": "security",
+      "target": "red",
+      "label": ""
+    },
+    {
+      "id": "contains-red-red-supervisor",
+      "kind": "contains",
+      "source": "red",
+      "target": "red-supervisor",
+      "label": ""
+    },
+    {
+      "id": "contains-red-red-analyst",
+      "kind": "contains",
+      "source": "red",
+      "target": "red-analyst",
+      "label": ""
+    },
+    {
+      "id": "supervises-security-supervisor-red-supervisor",
+      "kind": "supervises",
+      "source": "security-supervisor",
+      "target": "red-supervisor",
+      "label": ""
+    },
+    {
+      "id": "supervises-red-supervisor-red-analyst",
+      "kind": "supervises",
+      "source": "red-supervisor",
+      "target": "red-analyst",
+      "label": ""
+    },
+    {
+      "id": "contains-security-purple",
+      "kind": "contains",
+      "source": "security",
+      "target": "purple",
+      "label": ""
+    },
+    {
+      "id": "contains-purple-purple-supervisor",
+      "kind": "contains",
+      "source": "purple",
+      "target": "purple-supervisor",
+      "label": ""
+    },
+    {
+      "id": "contains-purple-purple-analyst",
+      "kind": "contains",
+      "source": "purple",
+      "target": "purple-analyst",
+      "label": ""
+    },
+    {
+      "id": "supervises-security-supervisor-purple-supervisor",
+      "kind": "supervises",
+      "source": "security-supervisor",
+      "target": "purple-supervisor",
+      "label": ""
+    },
+    {
+      "id": "supervises-purple-supervisor-purple-analyst",
+      "kind": "supervises",
+      "source": "purple-supervisor",
+      "target": "purple-analyst",
+      "label": ""
+    }
+  ],
+  "scene": {
+    "elements": [],
+    "appState": {},
+    "files": {}
+  }
+}
